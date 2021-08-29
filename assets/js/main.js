@@ -70,6 +70,24 @@ tabs.forEach((tab) => {
     });
 });
 
+// When click on qualification content 1, qualification content 1's color appears and qualification content 2's disappear and vice versa
+let curContent = 0;
+const changeContent = () => {
+    const universitySelector = document.getElementById("universitySelector");
+    const highschoolSelector = document.getElementById("highschoolSelector");
+
+    if (curContent == 0) {
+        //highschool
+        curContent = 1;
+        universitySelector.classList.add("qualification__active");
+        highschoolSelector.classList.remove("qualification__active");
+    } else {
+        curContent = 0;
+        universitySelector.classList.remove("qualification__active");
+        highschoolSelector.classList.add("qualification__active");
+    }
+};
+
 /*==================== SERVICES MODAL ====================*/
 const modalViews = document.querySelectorAll(".services__modal"),
     modalBtns = document.querySelectorAll(".services__button"),
